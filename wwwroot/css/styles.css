@@ -1,0 +1,392 @@
+﻿ /* Reset some default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #a7bcff; /* Galactic Chat background color */
+    }
+
+    /* Chat container styles */
+    .wholecontainer {
+        display: flex;
+        height: 100%;
+    }
+
+    .sidebar {
+        background-color:grey;
+        color: #fff;
+        width: 190px;
+        height: calc(100vh - 60px);
+        position: fixed;
+        left: 0;
+        top: 60px;
+        text-align: center;
+    }
+
+
+
+    .sidebar-content {
+        text-align: center;
+        padding: 16px;
+    }
+
+    .username-container,
+    .add-chat-container {
+        padding: 16px;
+    }
+
+    .username-container {
+        font-weight: bold;
+    }
+
+    /*.add-chat-container button {
+        background-color: #5d5b8d;*/ /* Galactic Chat "Add Chat" button color */
+        /*color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+        .add-chat-container button:hover {
+            background-color: #2f2d52;*/ /* Darker color for "Add Chat" button on hover */
+        /*}*/
+
+    .chat-container {
+        background-color: #fff; /* White background for the chat container */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        flex-grow: 1; /* Let the chat-container occupy the remaining space */
+        margin-left: 15%; /* Leave space for the sidebar */
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+.chat-content {
+    position: fixed;
+    top: 60px; /* Adjust this value to match the height of your navigation bar */
+    left: 15%; /* Leave space for the sidebar */
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+    .chat-header {
+        padding: 16px;
+        color: #fff;
+        font-size: 24px;
+        /*font-weight: bold;*/
+        text-align: center;
+    }
+.chat-messages .message.sent {
+    align-self: flex-end;
+    background-color: #3e8dff; /* Color for user's sent messages */
+    color: #000; /* Change the text color to black */
+}
+
+/* Add a class to messages received from others */
+.chat-messages .message.received {
+    align-self: flex-start;
+    background-color: #ddddf7; /* Color for received messages */
+    color: #000;
+}
+
+
+
+.chat-messages {
+    position: fixed;
+    top: 60px; /* Adjust this value to leave space for the nav bar */
+    left: 190px; /* Adjust this value to leave space for the sidebar */
+    right: 0;
+    bottom: 100px; /* Adjust this value to leave space for the message input container */
+    display: flex;
+    flex-direction: column; /* Display messages in a vertical column */
+    flex-wrap: wrap; /* Allow long messages to wrap onto the next line */
+    align-items: flex-start; /* Align messages to the left */
+    justify-content: flex-start; /* Start aligning messages from the top */
+    background-color: #ddddf7;
+    overflow-y: auto; /* Enable vertical scrolling if messages overflow the container */
+    padding: 20px; /* Add some padding for better aesthetics */
+    max-width: calc(100% - 190px); /* Adjust the maximum width based on available space */
+}
+ /* Add the following styles to center the file upload and send button within the input field */
+/* Add the following styles to center the file upload and send button within the input field */
+.chat-input {
+    position: fixed;
+    bottom: 0;
+    left: 190px;
+    right: 0;
+    color:black;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-with-send-button {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    flex: 1; /* Let the container take up all available space */
+}
+
+    /* Add some spacing between the file upload icon and the message input field */
+    .input-with-send-button label {
+        margin-right: 5px;
+    }
+
+/* Style the message input field */
+/* Style the message input field */
+#messageInput {
+  flex-grow: 1;
+  padding: 8px; /* Reduce the padding to make the input field shorter */
+  border: none;
+  border-radius: 15px; /* Add border radius to the input field */
+  outline: none;
+  color: #000; /* Change the text color to black */
+  font-size: 16px;
+  background-color: #f0f0f0; /* Set a light gray background color */
+}
+
+
+/* Style the send button */
+#sendButton {
+    padding: 8px;
+    border-radius: 50%;
+    background-color: transparent; /* Transparent background */
+    color: blue; /* Set the icon color to blue */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+    transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+}
+
+
+
+    #sendButton:active {
+        transform: scale(0.95); /* Add a subtle animation on button press */
+    }
+
+
+/* Custom CSS class for green-colored toast */
+
+
+/* Add some CSS to style the send button inside the input field */
+/*.input-with-send-button {
+ flex:1;
+}
+
+    .input-with-send-button input {
+        flex: 1;
+        border: none;
+        padding: 5px;
+    }
+
+    .input-with-send-button button {
+        margin-left: 10px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        background-color: #007bff;*/ /* You can change the background color to any color you like */
+        /*cursor: pointer;
+    }*/
+
+/* Add some margin to the chat input to separate it from the chat messages */
+/*.chat-input {
+    margin-top: 10px;
+}*/
+
+
+/* Your existing CSS styles for the button */
+/* Your existing CSS styles for the button */
+#addChatButton {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Galactic Chat "Add Chat" button color */
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Add a fade-in animation on hover */
+    #addChatButton::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        transition: left 0.2s ease-in-out;
+    }
+
+    #addChatButton:hover::before {
+        left: 0;
+    }
+
+    /* Add a scale animation on button click */
+    #addChatButton:active {
+        transform: scale(0.95); /* Scale down the button on click */
+        transition: transform 0.1s ease-in-out;
+    }
+/* Styling for the message container */
+#messages {
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align sent messages to the right */
+    padding: 10px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* Styling for the message container */
+#messages {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+/* Styling for sent messages */
+/* Styling for sent messages */
+.sent-message {
+    background-color: lightblue; /* Set your desired background color for sent messages */
+    border-radius: 10px; /* Set the border radius for sent messages */
+    margin: 5px 0; /* Add margin between messages for sent messages */
+    align-self: flex-end; /* Align sent messages to the right */
+    padding: 8px; /* Add padding to the sent messages for better spacing */
+}
+
+
+/* Styling for received messages */
+.message.received {
+    background-color: #E6E6E6; /* Set your desired background color for received messages */
+    border-radius: 10px; /* Set the border radius for received messages */
+    margin: 5px 0; /* Add margin between messages for received messages */
+    align-self: flex-start; /* Align received messages to the left */
+    padding: 8px; /* Add padding to the received messages for better spacing */
+}
+
+.received-message {
+    background-color: lightblue; /* Set your desired background color for sent messages */
+    border-radius:  10px,0px,10px,10px; /* Set the border radius for sent messages */
+    margin: 5px 0; /* Add margin between messages for sent messages */
+    align-self: flex-end; /* Align sent messages to the right */
+    padding: 8px; /* Add padding to the sent messages for better spacing */
+}
+
+/* Add your custom styles here */
+
+.image-preview,
+.image-message {
+    max-width: 250px; /* Adjust this value to your desired maximum width */
+    max-height: 250px; /* Adjust this value to your desired maximum height */
+}
+
+
+/* Add the margin between sender images */
+.image-message-sender {
+    margin-right: 10px; /* Adjust the margin as per your preference */
+}
+
+
+
+/* CSS to style the images in the chat */
+.image-message {
+    max-width: 200px; /* Adjust the maximum width of images */
+    height: auto;
+    border-radius: 5px; /* Add rounded corners to the images */
+    margin-bottom: 5px; /* Add margin between the images */
+}
+.container{
+    
+    justify-content:center;
+    align-items:center;
+    float:right;
+
+
+}
+/* CSS to style the avatars */
+.avatar {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    border-radius: 50%; /* Makes the avatar round */
+    overflow: hidden; /* Ensures round shape is applied */
+    margin-right: 10px; /* Spacing between avatar and name */
+}
+
+    .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Maintain aspect ratio and cover the avatar area */
+    }
+
+/* Additional CSS styles for your design */
+.connected-users-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.connected-users-container li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Spacing between user entries */
+}
+
+.connected-users-container span {
+    font-size: 16px; /* Adjust font size as needed */
+}
+/* Add this CSS to your stylesheet */
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 15px; /* Increase padding for larger profile containers */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    
+
+    .user-profile img {
+        width: 50px; /* Increase the width of the avatar image */
+        height: 50px; /* Increase the height of the avatar image */
+        border-radius: 50%;
+        margin-right: 15px; /* Increase the margin for spacing */
+    }
+
+    .user-profile span {
+        font-weight: bold;
+        font-size: 16px; /* Increase the font size for the name */
+    }

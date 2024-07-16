@@ -1,0 +1,49 @@
+﻿@model List<SignalR2.Models.ChatMessage>
+<div class="wholecontainer">
+    <div class="sidebar">
+        <h2 id="username"></h2>
+        <div class="sidebar-content">
+            <div class="username-container">
+                <div class="user-profile" data-useremail="asad7878@gmail.com">
+                    <img src="https://thumbs.dreamstime.com/b/flat-male-avatar-image-beard-hairstyle-businessman-profile-icon-vector-179285629.jpg" alt="Asad">
+                    <s id="username1">Asad</s    pan>
+                </div>
+
+                <div class="user-profile" data-useremail="ahmed1122@gmail.com">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8OqmaM2JMF1M-gd44wB2ZBBWxRUdqBFWjbQbdmMwI7UTOr9HL0FWuqK4liM2af2MxqMw&usqp=CAU" alt="Ahmed">
+                    <span id="username2">Ahmed</span>
+                </div>
+              @*  <div class="user-profile" data-userid="3" data-useremail="bolach7878@gmail.com">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbrm4erOcKSeBODv_MCoKzPAZu8KkAz--ovUN5iMD_1zA3OT8yDsdG1UM1f5hWRW97pec&usqp=CAU" alt="Bolach">
+                    <span id="username3">Baloch</span>
+                </div>*@
+                </div>
+            <div class="connected-users-container">
+                <h4>Connected Users:</h4>
+                <ul id="connectedUsersList">
+                    <!-- Add connected users here -->
+                </ul>
+            </div>
+            <div class="add-chat-container">
+                <button id="addChatButton" class="btn btn-primary">Add User</button>
+            </div>
+        </div>
+    </div>
+    <div class="chat-container">
+        <div class="chat-content">
+            <div class="chat-messages" id="messages"></div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <div class="input-with-send-button">
+            <input type="text" id="messageInput" class="form-control text-dark" placeholder="Type your message" autocomplete="off">
+            <label for="Image-Upload">
+                <i class="fa-sharp fa-solid fa-image fa-xl" style="color: #293256;"></i>
+            </label>
+            <input type="file" id="Image-Upload" class="form-control" style="display: none;">
+            <button id="sendButton" class="btn btn-primary">
+                <i class="fa fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
