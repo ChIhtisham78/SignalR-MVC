@@ -1,16 +1,6 @@
 ﻿using LiveChat.SignalR.Hubs;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using Microsoft.Extensions.Configuration;
-using SignalR;
-using SignalR.Data;
-using System;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 namespace SignalR.Controllers
 {
     public class UploadController : ControllerBase
@@ -32,43 +22,45 @@ namespace SignalR.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> AddOrEdit(MessageViewModel messageViewModel)
-        {
+        
+
+
             // Check if a file is uploaded
             if (messageViewModel.Pic != null && messageViewModel.Pic.Length > 0)
             {
                 var fileName = Path.GetRandomFileName().Substring(0, 6) + "_" + Path.GetFileNameWithoutExtension(messageViewModel.Pic.FileName) + Path.GetExtension(messageViewModel.Pic.FileName);
 
-                var uploadPath = Path.Combine(_environment.WebRootPath, "uploads");
+        var uploadPath = Path.Combine(_environment.WebRootPath, "uploads");
 
                 if (!Directory.Exists(uploadPath))
                 {
                     Directory.CreateDirectory(uploadPath);
                 }
 
-                var filePath = Path.Combine(uploadPath, fileName);
+    var filePath = Path.Combine(uploadPath, fileName);
 
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     await messageViewModel.Pic.CopyToAsync(fileStream);
-                }
+}
 
-                messageViewModel.Imageurl = "/uploads/" + fileName;
+messageViewModel.Imageurl = "/uploads/" + fileName;
             }
             else
-            {
-                // Handle the case where no file is uploaded
-                messageViewModel.Imageurl = null;
-            }
+{
+    // Handle the case where no file is uploaded
+    messageViewModel.Imageurl = null;
+}
 
 
 
-            return Ok(new { success = true, message = "Transaction saved successfully.", fileUrl = messageViewModel.Imageurl });
+return Ok(new { success = true, message = "Transaction saved successfully.", fileUrl = messageViewModel.Imageurl });
         }
 
 
         private IActionResult Json(object value)
-        {
-            throw new NotImplementedException();
-        }
+{
+    throw new NotImplementedException();
+}
     }
 }
