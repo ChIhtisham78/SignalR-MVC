@@ -10,6 +10,7 @@ namespace SignalR.Controllers
         private readonly IWebHostEnvironment _environment;
         private readonly IHubContext<ChatHub> _hubContext;
         public UploadController(
+
             IWebHostEnvironment environment,
             IHubContext<ChatHub> hubContext,
             IConfiguration configuration)

@@ -9,6 +9,7 @@ $(function () {
     var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
     var currentUsername = "";
     var activeChatRoom = "";
+
     function sendImage(toUserEmail, formData) {
         console.log("Sending image to: " + toUserEmail);
         $.ajax({
