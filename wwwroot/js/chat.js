@@ -16,6 +16,7 @@ $(document).ready(function () {
 
 
 
+
     connection.on("newMessage", function (messageView) {
         var isMine = messageView.from === viewModel.myName();
         var message = new ChatMessage(messageView.content, messageView.timestamp, messageView.from, isMine, messageView.avatar);
