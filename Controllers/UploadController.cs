@@ -28,6 +28,7 @@ namespace SignalR.Controllers
             {
                 var fileName = Path.GetRandomFileName().Substring(0, 6) + "_" + Path.GetFileNameWithoutExtension(messageViewModel.Pic.FileName) + Path.GetExtension(messageViewModel.Pic.FileName);
 
+
                 var uploadPath = Path.Combine(_environment.WebRootPath, "uploads");
 
                 if (!Directory.Exists(uploadPath))
