@@ -1,9 +1,4 @@
-﻿function getUserEmail(userEmail) {
-    // Add logic to fetch the user's email address from your authentication system or elsewhere
-    // Return the user's email address
-    return "user@example.com"; // Replace with the actual user's email address
-}
-
+﻿
 $(function () {
     getUserEmail();
     var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
@@ -109,18 +104,7 @@ $(function () {
         $("#chatContainer").scrollTop($("#messages").height());
     }
 
-    function getChatRoomMessages(chatRoom) {
-        var messages = [];
-        if (chatRoom === "John") {
-            messages.push({ sender: "John", content: "Hello there!" });
-            messages.push({ sender: currentUsername, content: "Hi John! How are you?" });
-            messages.push({ sender: "John", content: "I'm good. How about you?" });
-        } else if (chatRoom === "Emily") {
-            messages.push({ sender: "Emily", content: "Hey! What's up?" });
-            messages.push({ sender: currentUsername, content: "Not much. Just chilling." });
-        }
-        return messages;
-    }
+
     function displayPreviousMessages(messages) {
         messages.forEach(function (message) {
             var msgClass = message.sender === currentUsername ? "sent-message" : "received-message";
