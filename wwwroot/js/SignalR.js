@@ -155,6 +155,7 @@ $(function () {
                         text: 'Your image has been uploaded successfully!',
                         showConfirmButton: false,
                         timer: 2000, // Show for 2 seconds
+
                     });
                     $("#Image-Upload").val(""); // Clear the file input field
                 }
